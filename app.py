@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import joblib
 import base64
 import os
 import plotly.express as px
@@ -418,4 +419,5 @@ with tab3:
     df = pd.DataFrame(list(zip(Models, Accuracies)), columns=['Models', 'Accuracies'])
     fig = px.bar(df, y='Accuracies', x='Models')
     st.plotly_chart(fig)
+
 
