@@ -208,11 +208,13 @@ with tab1:
     # Model information
     algonames = ['Decision Trees', 'Logistic Regression', 'Random Forest', 'Support Vector Machine']
     modelnames = [
-        r"C:\Users\amogh\OneDrive\Desktop\Heartdisease\DTS.pkl",
-        r"C:\Users\amogh\OneDrive\Desktop\Heartdisease\LogisticRegression.pkl",
-        r"C:\Users\amogh\OneDrive\Desktop\Heartdisease\Random Forest Classifier.pkl",
-        r"C:\Users\amogh\OneDrive\Desktop\Heartdisease\SVM.pkl"
-    ]
+    "DTS.pkl",
+    "LogisticRegression.pkl",
+    "Random Forest Classifier.pkl",
+    "SVM.pkl"
+]
+
+
 
     # Function to predict using joblib
     def predict_heart_disease(data, modelnames):
@@ -355,7 +357,7 @@ with tab2:
 
                 # Check if all required columns exist
                 if set(expected_columns).issubset(input_data_bulk.columns):
-                    model = joblib.load(r"C:\Users\amogh\OneDrive\Desktop\Heartdisease\LogisticRegression.pkl")
+                    model = joblib.load("LogisticRegression.pkl")
                     predictions = model.predict(input_data_bulk[expected_columns])
                     input_data_bulk['Prediction LR'] = predictions
                     st.subheader("Predictions:")
@@ -419,5 +421,3 @@ with tab3:
     df = pd.DataFrame(list(zip(Models, Accuracies)), columns=['Models', 'Accuracies'])
     fig = px.bar(df, y='Accuracies', x='Models')
     st.plotly_chart(fig)
-
-
